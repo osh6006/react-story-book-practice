@@ -1,34 +1,43 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import DefaultTextField from "./components/DefaultTextField";
+import Lable from "./components/Lable";
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  const [isError, setIsError] = useState(false);
   return (
-    <>
+    <div className="space-y-10">
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <Lable htmlFor="email">이메일</Lable>
+        <DefaultTextField
+          id="email"
+          placeholder="이메일을 입력하세요"
+          value=""
+          isError={isError}
+          errorMessage="이메일을 확인해 주세요"
+          iconAlt="delete"
+          iconPath="https://res.cloudinary.com/dxesudkxn/image/upload/t_asdfasd/lzxdpssnaoactpwy4tqo.jpg"
+          onChange={() => {}}
+          onIconClick={() => {}}
+        />
       </div>
-      <h1 className="text-parimary">Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <div>
+        <Lable htmlFor="address">주소</Lable>
+        <DefaultTextField
+          id="address"
+          placeholder="주소를 입력하세요"
+          value=""
+          isError={isError}
+          errorMessage="주소를 확인해 주세요"
+          iconAlt="delete"
+          iconPath="https://res.cloudinary.com/dxesudkxn/image/upload/t_asdfasd/lzxdpssnaoactpwy4tqo.jpg"
+          onChange={() => {}}
+          onIconClick={() => {}}
+        />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      {/* CLS 에러 발생 (버튼을 눌를 떄 레이아웃이 확 바뀜)*/}
+      <button onClick={() => setIsError(!isError)}>에러 토글</button>
+    </div>
   );
 }
 

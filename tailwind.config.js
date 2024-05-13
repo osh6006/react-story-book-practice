@@ -2,7 +2,21 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    borderRadius: {
+      "primary-button": "5px",
+    },
+    extend: {
+      colors: {
+        primary: "#1d2745",
+        secondary: "#1DE5D4",
+        tertiary: "#F52C50",
+        white: "#FFFFFF",
+        mono100: "#CCCCCC",
+        mono200: "#AAAAAA",
+        error: "#D01E1E",
+        social: "#395997",
+      },
+    },
     fontFamily: {
       body: ["Noto Sans KR"],
     },
@@ -40,16 +54,6 @@ export default {
           fontWeight: "700",
         },
       ],
-    },
-    colors: {
-      parimary: "#1d2745",
-      secondary: "#1DE5D4",
-      tertiary: "#F52C50",
-      white: "#FFFFFF",
-      mono100: "#F52C50",
-      mono200: "#BEBEBE",
-      error: "#D01E1E",
-      social: "#395997",
     },
   },
   plugins: [],
