@@ -1,0 +1,22 @@
+import type { Meta, StoryObj } from "@storybook/react";
+import { fn } from "@storybook/test";
+import TagList from "../components/TagList";
+
+const meta = {
+  title: "List/TagList",
+  component: TagList,
+  parameters: {
+    layout: "centered",
+  },
+  tags: ["autodocs"],
+  argTypes: {
+    tagList: {
+      description: "태그 리스트",
+    },
+  },
+  args: { onTagClick: fn(), tagList: ["tag1", "tag2", "tag3"] },
+} satisfies Meta<typeof TagList>;
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {};

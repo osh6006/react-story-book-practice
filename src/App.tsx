@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import DefaultTextField from "./components/DefaultTextField";
 import Lable from "./components/Lable";
+import TagList from "./components/TagList";
 
 function App() {
   const [isError, setIsError] = useState(false);
@@ -37,6 +38,13 @@ function App() {
       </div>
       {/* CLS 에러 발생 (버튼을 눌를 떄 레이아웃이 확 바뀜)*/}
       <button onClick={() => setIsError(!isError)}>에러 토글</button>
+
+      <div className="bg-primary">
+        <TagList
+          tagList={["ALL", "React", "TypeScript", 1, 2, 3]}
+          onTagClick={console.log}
+        />
+      </div>
     </div>
   );
 }
