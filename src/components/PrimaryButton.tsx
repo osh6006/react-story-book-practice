@@ -7,7 +7,7 @@ export interface IPrimaryButtonProps {
   onClick: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-const dark = "bg-parimary text-white";
+const dark = "bg-primary text-white";
 const light = "bg-white text-primary";
 const social = "bg-social text-white";
 const text = "bg-transparent text-white";
